@@ -5,6 +5,8 @@ public class Map {
     // double cloudDensity; // between 0 and 0.5
     int X[];
     int Y[];
+    final char dot = '•';
+    final char cloud = '☁';
     public Map(int dimension, double density) {
         dim = dimension;
         density = Math.abs(density);
@@ -30,8 +32,8 @@ public class Map {
         while(cloudsPlaced < (dim*dim) * den) {
             int randX = (int)(Math.random() * dim);
             int randY = (int)(Math.random() * dim);
-            if(grid[randX][randY] == 'o') {
-                grid[randX][randY] = '#';
+            if(grid[randX][randY] == dot) {
+                grid[randX][randY] = cloud;
                 cloudsPlaced++;
             }
         }
@@ -41,8 +43,8 @@ public class Map {
         while(true) {
             int randX = (int)(Math.random() * dim);
             int randY = (int)(Math.random() * dim);
-            if(grid[randX][randY] == 'o') {
-                grid[randX][randY] = 'X';
+            if(grid[randX][randY] == dot) {
+                grid[randX][randY] = 'Ⓧ';
                 X = new int[]{randX, randY};
                 break;
             }
@@ -52,8 +54,8 @@ public class Map {
         while(true) {
             int randX = (int)(Math.random() * dim);
             int randY = (int)(Math.random() * dim);
-            if(grid[randX][randY] == 'o') {
-                grid[randX][randY] = 'Y';
+            if(grid[randX][randY] == dot) {
+                grid[randX][randY] = 'Ⓨ';
                 Y = new int[]{randX, randY};
                 break;
             }
@@ -63,7 +65,7 @@ public class Map {
     public void initMap() {
         for(int i = 0; i < dim; i++)
             for(int j = 0; j < dim; j++)
-                grid[i][j] = 'o';
+                grid[i][j] = dot;
     }
 
 
