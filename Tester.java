@@ -4,6 +4,10 @@ public class Tester {
         // init Magellan
         Bot magellan = new Bot();
         // init Map
-        Map map = new Map(10, 0.25);
+        Map map = new Map(10, 1);
+        // map.printMap();
+        magellan.explore(map, map.X, map.Y);
+
+
     }
 }
