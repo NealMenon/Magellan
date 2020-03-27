@@ -1,6 +1,9 @@
 
 public class Tester {
     public static void main(String args[]) {
-        System.out.println("Test1");
+        // init Magellan
+        Bot magellan = new Bot();
+        // init Map
+        Map map = new Map();
     }
 }
