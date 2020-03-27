@@ -4,6 +4,6 @@ public class Tester {
         // init Magellan
         Bot magellan = new Bot();
         // init Map
-        Map map = new Map();
+        Map map = new Map(10, 0.25);
     }
 }
