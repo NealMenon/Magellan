@@ -22,7 +22,6 @@ public class Map {
         this.cloudify(density);
         this.setX();
         this.setY();
-        System.out.println("Map init: ");
         this.printMap();
 
     }
@@ -46,6 +45,7 @@ public class Map {
             if(grid[randX][randY] == dot) {
                 grid[randX][randY] = 'Ⓧ';
                 X = new int[]{randX, randY};
+                // System.out.println("x: " + X[0] + " " + X[1]);
                 break;
             }
         }
@@ -57,6 +57,7 @@ public class Map {
             if(grid[randX][randY] == dot) {
                 grid[randX][randY] = 'Ⓨ';
                 Y = new int[]{randX, randY};
+                // System.out.println("y: " + Y[0] + " " + Y[1]);
                 break;
             }
         }
@@ -70,6 +71,7 @@ public class Map {
 
 
     public void printMap() {
+        System.out.println("Map state: ");
         for(int i = 0; i < dim; i++) {
             for(int j = 0; j < dim; j++)
                 System.out.print(grid[i][j] + " ");
