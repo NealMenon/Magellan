@@ -9,8 +9,7 @@ public class Map {
     final char cloud = '☁';
     public Map(int dimension, double density) {
         dim = dimension;
-        density = Math.abs(density);
-        density = Math.min(density, 0.4);
+        density = Math.min(Math.abs(density), 0.4);
 
         // cloudDensity = density;
 
@@ -28,7 +27,7 @@ public class Map {
 
     public void cloudify(double den) {
         int cloudsPlaced = 0;
-        while(cloudsPlaced < (dim*dim) * den) {
+        while(cloudsPlaced < Math.floor((dim*dim) * den)) {
             int randX = (int)(Math.random() * dim);
             int randY = (int)(Math.random() * dim);
             if(grid[randX][randY] == dot) {
