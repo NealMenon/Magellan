@@ -6,7 +6,7 @@ public class Tester {
         // init Map
         Map map = new Map(10, 1);
         // map.printMap();
-        magellan.explore(map, map.X, map.Y,map.dim, "");
+        magellan.explore(map, map.X, map.Y);
 
 
     }

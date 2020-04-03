@@ -3,10 +3,11 @@ public class Map {
     char grid[][];
     int dim;
     // double cloudDensity; // between 0 and 0.5
-    int X[];
-    int Y[];
+    static int X[];
+    static int Y[];
     final char dot = '•';
     final char cloud = '☁';
+
     public Map(int dimension, double density) {
         dim = dimension;
         density = Math.min(Math.abs(density), 0.4);
@@ -24,6 +25,14 @@ public class Map {
         this.printMap();
 
     }
+    public Map(int dimension) {
+        grid = new char[dim][dim];
+        this.initMap();
+
+        this.printMap();
+    }
+
+
 
     public void cloudify(double den) {
         int cloudsPlaced = 0;
