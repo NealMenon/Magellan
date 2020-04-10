@@ -26,10 +26,11 @@ public class Map {
 
     }
     public Map(int dimension) {
-        grid = new char[dim][dim];
-        this.initMap();
+        this.dim = dimension;
+        grid = new char[this.dim][this.dim];
+        this.initSol();
 
-        this.printMap();
+        // this.printMap();
     }
 
 
@@ -77,12 +78,19 @@ public class Map {
                 grid[i][j] = dot;
     }
 
+    public void initSol() {
+        for(int i = 0; i < dim; i++)
+            for(int j = 0; j < dim; j++)
+                grid[i][j] = cloud;
+        // System.out.println("Sol grid init");
+        // this.printMap();
+    }
 
     public void printMap() {
         System.out.println("Map state: ");
-        for(int i = 0; i < dim; i++) {
-            for(int j = 0; j < dim; j++)
-                System.out.print(grid[i][j] + " ");
+        for(int i = 0; i < this.dim; i++) {
+            for(int j = 0; j < this.dim; j++)
+                System.out.print(this.grid[i][j] + " ");
             System.out.println();
         }
     }

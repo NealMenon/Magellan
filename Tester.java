@@ -2,9 +2,11 @@
 public class Tester {
     public static void main(String args[]) {
         // init Magellan
-        Bot magellan = new Bot();
+
+        final int mapSize = 8;
+        Bot magellan = new Bot(mapSize);
         // init Map
-        Map map = new Map(10, 1);
+        Map map = new Map(mapSize, .4);
         // map.printMap();
         magellan.explore(map, map.X, map.Y);
 
