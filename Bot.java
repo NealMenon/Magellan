@@ -8,16 +8,13 @@ public class Bot {
         sol = new Map(size);
     }
 
-    public void explore(Map map, int X[], int Y[]){
-
-
-
+    public void explore(Map map, int X[], int Y[]) {
         if(findPath(map, sol, X[0], X[1], Y)) {
             System.out.println("Solution Found!");
             sol.grid[X[0]][X[1]] = 'Ⓧ';
             sol.grid[Y[0]][Y[1]] = 'Ⓨ';
             sol.printMap();
-            // System.out.println("orig map!");
+            // System.out.println("Orig map!");
             // map.printMap();
             System.out.println("Solution Above!");
         } else {
@@ -38,11 +35,6 @@ public class Bot {
         if(isSafe(map, x, y)) {
             // System.out.println("I'm at " + x + " " + y);
             sol.grid[x][y] = dot;
-            // 0d 1r 2u 3l
-            // DOWN = 0
-            // RIGHT = 1
-            // UP = 2
-            // LEFT = 3
             if(isSafe(map, x+1, y) && sol.grid[x+1][y] != dot && findPath(map, sol, x+1, y, fin)) { //go down
 				return true;
 			}
@@ -52,7 +44,7 @@ public class Bot {
             }
             if(isSafe(map, x-1, y) && sol.grid[x-1][y] != dot && findPath(map, sol, x-1, y, fin)) { //go up
 				return true;
-			} // && isSafe(sol, x, y+1)
+			}
             if(isSafe(map, x, y-1) && sol.grid[x][y-1] != dot && findPath(map, sol, x, y-1, fin)) { //go left
 				return true;
 			}
@@ -62,21 +54,12 @@ public class Bot {
         return false;
     }
 
-
-
-
-
     public boolean isSafe(Map map, int x, int y) {
         return (x >= 0 &&
                 x < map.dim &&
                 y >= 0 &&
                 y < map.dim &&
                 map.grid[x][y] != cloud);
-        // if (ret)
-        //     System.out.println(x + " " + y + " is safe");
-        // else
-        //     System.out.println(x + " " + y + " is not safe");
-        // return ret;
     }
 
     public boolean isSafe2(Map map, int x, int y, Map sol) {

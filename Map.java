@@ -2,7 +2,6 @@
 public class Map {
     char grid[][];
     int dim;
-    // double cloudDensity; // between 0 and 0.5
     static int X[];
     static int Y[];
     final char dot = '•';
@@ -10,10 +9,8 @@ public class Map {
 
     public Map(int dimension, double density) {
         dim = dimension;
+        // double cloud Density between 0 and 0.4
         density = Math.min(Math.abs(density), 0.4);
-
-        // cloudDensity = density;
-
         grid = new char[dim][dim];
         X = new int[2];
         Y = new int[2];
@@ -29,7 +26,6 @@ public class Map {
         this.dim = dimension;
         grid = new char[this.dim][this.dim];
         this.initSol();
-
         // this.printMap();
     }
 
