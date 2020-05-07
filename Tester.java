@@ -6,7 +6,7 @@ public class Tester {
         final int mapSize = 8;
         Bot magellan = new Bot(mapSize);
         // init Map
-        Map map = new Map(mapSize, .4);
+        Map map = new Map(mapSize, 0.4);
         // map.printMap();
         magellan.explore(map, map.X, map.Y);
 

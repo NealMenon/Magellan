@@ -9,16 +9,6 @@ public class Bot {
     }
 
     public void explore(Map map, int X[], int Y[]){
-        /*
-        // System.out.println("Bot is at " + map.X[0] + " " + map.X[1]);
-        // sol = new Map(map.dim);
-        // System.out.println("Solution created");
-        // sol.printMap();
-        if(!solver(map, X[0], X[1], Y, sol)) {
-            System.out.println("Solution DNE!");
-            return;
-        }*/
-
 
 
 
@@ -60,9 +50,9 @@ public class Bot {
             if(isSafe(map, x, y+1) && sol.grid[x][y+1] != dot && findPath(map, sol, x, y+1, fin)) { //go right
                 return true;
             }
-            if(isSafe(map, x-1, y) && isSafe(sol, x, y+1) && sol.grid[x-1][y] != dot && findPath(map, sol, x-1, y, fin)) { //go up
+            if(isSafe(map, x-1, y) && sol.grid[x-1][y] != dot && findPath(map, sol, x-1, y, fin)) { //go up
 				return true;
-			}
+			} // && isSafe(sol, x, y+1)
             if(isSafe(map, x, y-1) && sol.grid[x][y-1] != dot && findPath(map, sol, x, y-1, fin)) { //go left
 				return true;
 			}
